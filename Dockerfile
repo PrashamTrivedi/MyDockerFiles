@@ -1,5 +1,8 @@
 FROM node:12-alpine
 
+LABEL org.opencontainers.image.source=https://github.com/PrashamTrivedi/MyDockerFiles
+
+
 ARG VERSION
 ENV VERSION ${VERSION}
 ENV PACKAGE hugo_${VERSION}_Linux-64bit.tar.gz
