@@ -1,7 +1,8 @@
 FROM node:12-alpine
 
 LABEL org.opencontainers.image.source=https://github.com/PrashamTrivedi/MyDockerFiles
-
+LABEL org.opencontainers.image.ref.name=hugo_firebase
+LABEL org.opencontainers.image.title=hugo_firebase
 
 ARG VERSION
 ENV VERSION ${VERSION}
