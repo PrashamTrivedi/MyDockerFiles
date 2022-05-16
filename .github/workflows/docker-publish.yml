@@ -8,15 +8,14 @@ name: Build Hugo Firebase
 # documentation.
 
 on:
-  # workflow_dispatch:
-  #   inputs:
-  #     hugo_version: 
-  #       description: 'Your hugo version'
-  #       required: true
-  #       type: string
+  workflow_dispatch:
+    inputs:
+      hugo_version: 
+        description: 'Your hugo version'
+        required: true
+        type: string
   push:
-    tags:
-      - "*"
+    branches: [ main ]
     
 env:
   # Use docker.io for Docker Hub if empty
@@ -60,6 +59,6 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          build-args: VERSION=${{ steps.meta.outputs.tags }}
+          build-args: VERSION=${{ github.event.inputs.hugo_version }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
