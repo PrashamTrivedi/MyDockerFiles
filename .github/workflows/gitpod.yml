@@ -16,7 +16,8 @@ on:
   #       type: string
   push:
     paths:
-      - ".gitpod_default.Dockerfile"
+      - "./gitpod_default.Dockerfile"
+      - "./github/workflows/gitpod.yml"
     
 env:
   # Use docker.io for Docker Hub if empty
@@ -58,7 +59,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
         with:
-          context: .
+          context: .gitpod_default.Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ fromJSON(steps.meta.outputs.json).labels['org.opencontainers.image.version'] }}
           labels: ${{ steps.meta.outputs.labels }}
