@@ -1,4 +1,4 @@
-name: Build Hugo Firebase
+name: Build AWS CDK
 
 
 
@@ -16,13 +16,13 @@ on:
   #       type: string
   push:
     paths:
-      - "Dockerfile"
+      - "/aws/cdk.Dockerfile"
     
 env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
-  IMAGE_NAME: ${{ github.actor }}/hugo_firebase
+  IMAGE_NAME: ${{ github.actor }}/aws_cdk
 
 
 jobs:
