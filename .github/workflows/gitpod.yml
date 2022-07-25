@@ -8,6 +8,7 @@ name: Build Gitpod
 # documentation.
 
 on:
+  workflow_dispatch:
   # workflow_dispatch:
   #   inputs:
   #     hugo_version: 
