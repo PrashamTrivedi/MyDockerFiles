@@ -60,7 +60,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
         with:
-          context: .gitpod_default.Dockerfile
+          file: .gitpod_default.Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ fromJSON(steps.meta.outputs.json).labels['org.opencontainers.image.version'] }}
           labels: ${{ steps.meta.outputs.labels }}
