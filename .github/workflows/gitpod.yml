@@ -62,5 +62,3 @@ jobs:
         with:
           file: .gitpod_default.Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ fromJSON(steps.meta.outputs.json).labels['org.opencontainers.image.version'] }}
-          labels: ${{ steps.meta.outputs.labels }}
